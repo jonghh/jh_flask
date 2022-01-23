@@ -18,15 +18,15 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(config)
 
-    # ORM
+    ### ORM
     db.init_app(app)
     migrate.init_app(app, db)
-    from . import models
+    #from . import models
 
-    # 블루프린트
+    ### 블루프린트
     from .views import main_views, policynews
     app.register_blueprint(main_views.bp)
-    app.register_blueprint(policynews.bp)
+    #app.register_blueprint(policynews.bp)
 
     return app
 '''app = create_app()
